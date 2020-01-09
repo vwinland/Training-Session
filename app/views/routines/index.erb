@@ -1,1 +1,7 @@
-Does this work?
+<h1>Routines</h1>
+
+<% @routines.each do |routine| %>
+    <h2><%= routine.title %></h2>
+    <p><%= routine.method %></p>
+    <img src="<% routine.image %>" alt="routine">
+<% end %>
