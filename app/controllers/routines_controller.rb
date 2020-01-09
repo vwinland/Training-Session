@@ -12,11 +12,22 @@ class RoutinesController < ApplicationController
         # Create
         # make a post request to '/routines'
 
+        post '/routines' do 
+            routine = Routine.new(params)
+            if routine.title.empty? && !routine.method.empty?
+                routine.save
+                redirect '/routines' #take the use to the recipes index page
+            else
+               erb :'/routines/new' #rerender the form
+            end
+        end
+
+
 
     #READ 
 
         # Index 
-        #make a get request to '/routines' <=static route
+       
         
         get '/routines' do 
 
