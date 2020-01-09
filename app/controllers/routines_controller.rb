@@ -4,6 +4,11 @@ class RoutinesController < ApplicationController
         # New <= to render the form
         # make a get request to '/routines/new'
 
+        get '/routines/new' do 
+            erb :'/routines/new'
+        end
+
+
         # Create
         # make a post request to '/routines'
 
