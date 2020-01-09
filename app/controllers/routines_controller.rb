@@ -24,7 +24,7 @@ class RoutinesController < ApplicationController
 
         get '/routines/:id' do 
             
-            @routine = Routine.find
+            @routine = Routine.find(params["id"])
             erb :'routines/show'
         end
 
