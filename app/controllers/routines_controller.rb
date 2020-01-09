@@ -16,6 +16,7 @@ class RoutinesController < ApplicationController
         get '/routines' do 
             erb :'routines/index'
         end
+        
         # Show 
         # make a get request to '/routines/:id' <= dynamic route
 
