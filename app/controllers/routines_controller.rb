@@ -22,6 +22,12 @@ class RoutinesController < ApplicationController
         # Show 
         # make a get request to '/routines/:id' <= dynamic route
 
+        get '/routines/:id' do 
+            
+            @routine = Routine.find
+            erb :'routines/show'
+        end
+
     #UPDATE
 
         # Edit 
