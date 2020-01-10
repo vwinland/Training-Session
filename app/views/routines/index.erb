@@ -1,5 +1,5 @@
 <h1>Routines</h1>
-
+<a href="/routines/new">Create a Routine</a>
 <% @routines.each do |routine| %>
     <h2><a href="/routines/<%= routine.id %>"><%= routine.title %></a></h2>
     <p><%= routine.method %></p>
