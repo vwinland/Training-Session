@@ -18,6 +18,7 @@ class RoutinesController < ApplicationController
                 routine.save
                 redirect '/routines' #take the use to the recipes index page
             else
+                @error = "Data invalid. Please try again."
                erb :'/routines/new' #rerender the form
             end
         end
