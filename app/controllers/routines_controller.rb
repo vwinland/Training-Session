@@ -32,7 +32,7 @@ class RoutinesController < ApplicationController
         
         get '/routines' do 
 
-            @routines = Routine.all
+            @routines = Routine.all.reverse
             erb :'routines/index'
         end
 
