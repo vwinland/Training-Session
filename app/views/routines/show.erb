@@ -1,1 +1,7 @@
 <h1><%= @routine.title %></h1>
+<h2><%= @routine.method %></h2>
+<img src="<%= @routine.image %>" alt="routine">
+<form action="/routines/<%= @routine.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit">Delete Routine</button>
+</form>

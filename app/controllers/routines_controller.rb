@@ -67,11 +67,13 @@ class RoutinesController < ApplicationController
             end
         end 
 
-
-
-
     #DESTROY
         
         # make a delete request to '/routines/:id'
+        delete '/routines/:id' do
+            routine = Routine.find(params[:id])
+            routine.destroy
+            redirect '/routines'
+        end
 
 end
