@@ -10,6 +10,9 @@ class UsersController < ApplicationController
         if user.username.empty? || user.password.empty?
             @error = "Username and password can't be blank"
             erb :'/users/signup'
+        elsif User.find_by(username: user.username)
+            @error = "That username is taken :("
+            erb :'/users/signup'
         else
             user.save
             session[:user_id] = user.id
