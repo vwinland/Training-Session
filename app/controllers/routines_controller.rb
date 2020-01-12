@@ -49,6 +49,11 @@ class RoutinesController < ApplicationController
 
         # Edit 
         # make a get request to '/routines/:id/edit'
+        get '/routines/:id/edit' do 
+            @routine = Routine.find(params[:id])
+            erb :'/routines/edit'
+        end
+
         # Update
         # make a patch request to '/routines/:id'
 

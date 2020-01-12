@@ -1,0 +1,12 @@
+<h1>Edit Routine for <%= @routine.title %></h1>
+<p><%= @error %></p>
+<form action="/routines/<%=@routine.id%>" method="post">
+    <input type="hidden"
+    <label>Title</label>
+    <input type="text" name="title">
+    <label>Method</label>
+    <textarea name="method"></textarea>
+    <label>Image URL</label>
+    <input type="text" name="image">
+    <button type="submit">Edit Routine</button>
+</form>
