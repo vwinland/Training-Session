@@ -5,7 +5,11 @@ class RoutinesController < ApplicationController
         # make a get request to '/routines/new'
 
         get '/routines/new' do 
-            erb :'/routines/new'
+            if User.find_by(id: session[:user_id])
+                erb :'/routines/new'
+            else
+                redirect '/login'
+            end
         end
 
 
@@ -43,9 +47,12 @@ class RoutinesController < ApplicationController
         # make a get request to '/routines/:id' <= dynamic route
 
         get '/routines/:id' do 
-            
-            @routine = Routine.find(params["id"])
-            erb :'routines/show'
+            if User.find_by(id: session[:user_id])
+                @routine = Routine.find(params["id"])
+                erb :'routines/show'
+            else
+                redirect '/login'
+            end
         end
 
     #UPDATE
