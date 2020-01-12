@@ -57,12 +57,12 @@ class RoutinesController < ApplicationController
         # Update
         # make a patch request to '/routines/:id'
         patch '/routines/:id' do 
-            routine = Routine.find(params[:id])
-            if !params[:routine][:title].empty? && !params[:routine][:method]..empty?
+            @routine = Routine.find(params[:id])
+            if !params[:routine][:title].empty? && !params[:routine][:method].empty?
                 routine.update(params[:routine])
             else
                 @error = "Data invalid. Please try again."
-                erb :'/recipes/edit'
+                erb :'/routines/edit'
             end
         end 
 
