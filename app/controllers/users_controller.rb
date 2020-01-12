@@ -12,8 +12,10 @@ class UsersController < ApplicationController
             erb :'/users/signup'
         else
             user.save
+            session[:user_id] = user.id
             redirect '/routines'
         end
+    end
 
 
 
