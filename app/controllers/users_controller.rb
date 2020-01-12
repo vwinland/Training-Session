@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do 
-        User.new(params)
+        user = User.new(params)
         if user.username.empty? || user.password.empty?
             @error = "Username and password can't be blank"
             erb :'/users/signup'
