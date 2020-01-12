@@ -17,7 +17,7 @@ class RoutinesController < ApplicationController
         # make a post request to '/routines'
 
         post '/routines' do 
-            current_user.routines.build(params)
+            routine = current_user.routines.build(params)
             if !routine.title.empty? && !routine.method.empty? 
                 routine.save
                 redirect '/routines' #take the use to the recipes index page
