@@ -5,5 +5,7 @@
 * build controller actions and passing appropriate data to views 
 * build views (forms)
 * build navigation
+* add user authentication
+* add user authorization
 
 # Training-Session

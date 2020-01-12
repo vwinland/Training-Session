@@ -28,11 +28,15 @@ class RoutinesController < ApplicationController
     #READ 
 
         # Index 
-       
+        
         
         get '/routines' do 
-            @routines = Routine.all.reverse
-            erb :'routines/index'
+            if User.find_by(id: session[:user_id])
+                @routines = Routine.all.reverse
+                erb :'routines/index'
+            else
+                redirect '/login'
+            end
         end
 
         # Show 
