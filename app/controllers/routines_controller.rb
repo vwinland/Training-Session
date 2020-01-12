@@ -59,7 +59,8 @@ class RoutinesController < ApplicationController
         patch '/routines/:id' do 
             @routine = Routine.find(params[:id])
             if !params[:routine][:title].empty? && !params[:routine][:method].empty?
-                routine.update(params[:routine])
+                @routine.update(params[:routine])
+                redirect "/routines/#{params[:id]}"
             else
                 @error = "Data invalid. Please try again."
                 erb :'/routines/edit'
