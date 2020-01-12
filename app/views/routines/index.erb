@@ -5,5 +5,7 @@
     <h2><a href="/routines/<%= routine.id %>"><%= routine.title %></a></h2>
     <p><%= routine.method %></p>
     <img src="<% routine.image %>" alt="routine">
-    <a href="/routines/<%= routine.id %>/edit">Edit</a>
+    <% if routine.user && session[:user_id] == routine.user.id %>
+        <a href="/routines/<%= routine.id %>/edit">Edit</a>
+        <% end %>
 <% end %>
