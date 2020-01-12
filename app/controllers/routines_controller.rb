@@ -5,7 +5,7 @@ class RoutinesController < ApplicationController
         # make a get request to '/routines/new'
 
         get '/routines/new' do 
-            if User.find_by(id: session[:user_id])
+            if logged_in?
                 erb :'/routines/new'
             else
                 redirect '/login'
@@ -35,7 +35,7 @@ class RoutinesController < ApplicationController
         
         
         get '/routines' do 
-            if User.find_by(id: session[:user_id])
+            if logged_in?
                 @routines = Routine.all.reverse
                 erb :'routines/index'
             else
@@ -47,7 +47,7 @@ class RoutinesController < ApplicationController
         # make a get request to '/routines/:id' <= dynamic route
 
         get '/routines/:id' do 
-            if User.find_by(id: session[:user_id])
+            if logged_in?
                 @routine = Routine.find(params["id"])
                 erb :'routines/show'
             else
