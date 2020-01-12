@@ -60,8 +60,12 @@ class RoutinesController < ApplicationController
         # Edit 
         # make a get request to '/routines/:id/edit'
         get '/routines/:id/edit' do 
-            @routine = Routine.find(params[:id])
-            erb :'/routines/edit'
+            if logged_in?
+                @routine = Routine.find(params[:id])
+                erb :'/routines/edit'
+            else 
+                redirect '/login'
+            end
         end
 
         # Update
