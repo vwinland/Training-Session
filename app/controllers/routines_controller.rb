@@ -56,6 +56,10 @@ class RoutinesController < ApplicationController
 
         # Update
         # make a patch request to '/routines/:id'
+        patch '/routines/:id' do 
+            
+        end
+
 
     #DESTROY
         
