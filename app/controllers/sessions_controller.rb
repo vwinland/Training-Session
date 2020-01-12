@@ -20,8 +20,9 @@ class SessionsController < ApplicationController
         end
     end
 
-
-
     #user can log out 
+    get '/logout' do 
+        session.clear
+    end
 
 end
