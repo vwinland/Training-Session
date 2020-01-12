@@ -75,5 +75,4 @@ class RoutinesController < ApplicationController
             routine.destroy
             redirect '/routines'
         end
-
 end
