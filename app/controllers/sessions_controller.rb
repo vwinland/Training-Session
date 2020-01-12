@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
     #user can log out 
     get '/logout' do 
         session.clear
+        redirect '/'
     end
 
 end
