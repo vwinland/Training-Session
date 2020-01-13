@@ -4,7 +4,7 @@
 <% @routines.each do |routine| %>
     <h2><a href="/routines/<%= routine.id %>"><%= routine.title %></a></h2>
     <p><%= routine.method %></p>
-    <img src="<% routine.image %>" alt="routine">
+    <img src="<%= routine.image %>" alt="routine">
     <% if routine.user && session[:user_id] == routine.user.id %>
         <a href="/routines/<%= routine.id %>/edit">Edit</a>
         <% end %>

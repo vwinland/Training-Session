@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200112015007) do
+ActiveRecord::Schema.define(version: 20200113000119) do
 
   create_table "routines", force: :cascade do |t|
     t.string  "title"
     t.text    "method"
-    t.string  "image",   default: "https://images.unsplash.com/photo-1562771242-a02d9090c90c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2551&q=80"
+    t.string  "image",   default: "http://www.ptonline.it/media/k2/items/cache/2fb5466a104eac2a47f2a0a18a529671_M.jpg"
     t.integer "user_id"
   end
 
