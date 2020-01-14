@@ -5,13 +5,9 @@ class RoutinesController < ApplicationController
         # make a get request to '/routines/new'
 
         get '/routines/new' do 
-            if logged_in?
-                erb :'/routines/new'
-            else
-                redirect '/login'
-            end
+            require_login
+            erb :'/routines/new'
         end
-
 
         # Create
         # make a post request to '/routines'
