@@ -50,10 +50,14 @@ class RoutinesController < ApplicationController
 
         get '/routines/:id' do 
             if logged_in?
-                @routine = Routine.find(params["id"])
-                erb :'routines/show'
+                @routine = Routine.find_by(id: params[:id])
+                if @recipe
+                    erb :'/routines/show'
+                else
+                    redirect '/routines'
+                end
             else
-                redirect '/login'
+                redirect '/login'   
             end
         end
 
