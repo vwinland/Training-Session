@@ -1,11 +1,15 @@
 class RoutinesController < ApplicationController
+
+    before do 
+        require_login
+    end
+
     # CREATE 
 
         # New <= to render the form
         # make a get request to '/routines/new'
 
         get '/routines/new' do 
-            require_login
             erb :'/routines/new'
         end
 
@@ -25,36 +29,25 @@ class RoutinesController < ApplicationController
             end
         end
 
-
-
     #READ 
 
         # Index 
         
-        
         get '/routines' do 
-            if logged_in?
                 @routines = Routine.all.reverse
                 erb :'routines/index'
-            else
-                redirect '/login'
-            end
         end
 
         # Show 
         # make a get request to '/routines/:id' <= dynamic route
 
         get '/routines/:id' do 
-            if logged_in?
                 @routine = Routine.find_by(id: params[:id])
                 if @recipe
                     erb :'/routines/show'
                 else
                     redirect '/routines'
                 end
-            else
-                redirect '/login'   
-            end
         end
 
     #UPDATE
@@ -62,12 +55,8 @@ class RoutinesController < ApplicationController
         # Edit 
         # make a get request to '/routines/:id/edit'
         get '/routines/:id/edit' do 
-            if logged_in?
                 @routine = Routine.find(params[:id])
                 erb :'/routines/edit'
-            else 
-                redirect '/login'
-            end
         end
 
         # Update
