@@ -7,15 +7,12 @@ class UsersController < ApplicationController
 
     post '/signup' do 
         user = User.new(params)
-        if !user.save
-            @error = "Username and password can't be blank"
-            erb :'/users/signup'
-        elsif User.find_by(username: user.username)
-            @error = "That username is taken :("
-            erb :'/users/signup'
-        else
+        if user.save
             session[:user_id] = user.id
             redirect '/routines'
+        else
+            @error = "Invalid credentials"
+            erb :'/users/signup'
         end
     end
 
