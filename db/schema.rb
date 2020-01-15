@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200113000119) do
+ActiveRecord::Schema.define(version: 20200115014125) do
+
+  create_table "exercises", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+  end
 
   create_table "routines", force: :cascade do |t|
     t.string  "title"
     t.text    "method"
     t.string  "image",   default: "http://www.ptonline.it/media/k2/items/cache/2fb5466a104eac2a47f2a0a18a529671_M.jpg"
     t.integer "user_id"
+  end
+
+  create_table "routines_exercises", force: :cascade do |t|
+    t.integer "routine_id"
+    t.integer "exercise_id"
   end
 
   create_table "users", force: :cascade do |t|
