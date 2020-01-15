@@ -1,3 +1,3 @@
 class Exercise < ActiveRecord::Base 
-    has_many :routines, through :routines_exercises
+    has_and_belongs_to_many :routines
 end
