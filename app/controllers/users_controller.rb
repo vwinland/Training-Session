@@ -16,9 +16,5 @@ class UsersController < ApplicationController
         end
     end
 
-
-
     # users can delete account
-
-
 end
