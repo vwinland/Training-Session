@@ -40,7 +40,7 @@ class RoutinesController < ApplicationController
 
         get '/routines/:id' do 
                 @routine = Routine.find_by(id: params[:id])
-                if @recipe
+                if @routine
                     erb :'/routines/show'
                 else
                     redirect '/routines'

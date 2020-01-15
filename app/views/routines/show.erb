@@ -3,7 +3,7 @@
 <img src="<%= @routine.image %>" alt="routine">
 <form action="/routines/<%= @routine.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <% if @routine.user == current_user.id %>
+    <% if @routine.user == current_user %>
         <button type="submit">Delete Routine</button>
     <% end %>
 </form>
