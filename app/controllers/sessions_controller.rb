@@ -10,14 +10,16 @@ class SessionsController < ApplicationController
             @error = "Username or password can't be blank"
             erb :'users/login'
         else
-            if user = User.find_by(username: params[:username]) && user.authenticate(params[:password])
-                session[:user_id] = user.id
+            @current_user = User.find_by(username: params[:username])
+            if @current_user && @current_user.authenticate(params[:password])
+                session[:user_id] = @current_user.id
                 redirect '/routines'
             else
-                @error = "Account not found"
+                @error = "Username and password do not match"
                 erb :'/users/login'
             end
         end
+
     end
 
     #user can log out 
