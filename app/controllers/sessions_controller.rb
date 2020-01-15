@@ -19,7 +19,6 @@ class SessionsController < ApplicationController
                 erb :'/users/login'
             end
         end
-
     end
 
     #user can log out 

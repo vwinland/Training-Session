@@ -11,7 +11,7 @@
 # Training-Session
 
 # Project Requirements
-Build an MVC Sinatra application.
+* Build an MVC Sinatra application.
 * Use ActiveRecord with Sinatra.
 * Use multiple models.
 * Use at least one has_many relationship on a User model and one belongs_to relationship on another model.
