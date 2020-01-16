@@ -7,8 +7,9 @@
     <textarea name="method"></textarea>
     <label>Image URL</label>
     <input type="text" name="image">
+    <button type="submit">Add Routine</button>
     <% @exercises.each do |exercise| %>
+        <br>
         <input type="checkbox" name="exercise[name]" value="<%= exercise.id %>"><%= exercise.name%></input>
     <% end %>
-    <button type="submit">Add Routine</button>
 </form>
