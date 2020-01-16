@@ -5,6 +5,7 @@
     <h2><a href="/routines/<%= routine.id %>"><%= routine.title %></a></h2>
     <p><%= routine.method %></p>
     <img src="<%= routine.image %>" alt="routine">
+    <%= routine.exercises.map {|exercise| exercise.name}.join(", ") %>
     <% if current_user == routine.user %>
         <a href="/routines/<%= routine.id %>/edit">Edit</a>
         <% end %>
