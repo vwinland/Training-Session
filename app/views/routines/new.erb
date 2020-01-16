@@ -5,9 +5,10 @@
     <input type="text" name="title">
     <label>Method</label>
     <textarea name="method"></textarea>
-    <% @exercises.each do |exercise| %>
-    <input type="checkbox" value="<%= exercise.id %>"
     <label>Image URL</label>
     <input type="text" name="image">
+    <% @exercises.each do |exercise| %>
+        <input type="checkbox" name="exercise[name]" value="<%= exercise.id %>"><%= exercise.name%></input>
+    <% end %>
     <button type="submit">Add Routine</button>
 </form>
