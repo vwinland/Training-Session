@@ -8,6 +8,7 @@ class RoutinesController < ApplicationController
         # New <= to render the form
 
         get '/routines/new' do 
+            @exercises = Exercise.all
             erb :'/routines/new'
         end
 
