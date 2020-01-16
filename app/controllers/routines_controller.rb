@@ -16,7 +16,7 @@ class RoutinesController < ApplicationController
         # make a post request to '/routines'
 
         post '/routines' do
-            filtered_params = {}
+            filtered_params = params
             filtered_params[:routine] = params[:routine].reject{|key, value| key == "image" && value.empty?}
             routine = current_user.routines.build(filtered_params[:routine])
             routine.exercises.build(filtered_params[:exercise])
