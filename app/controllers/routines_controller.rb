@@ -19,7 +19,11 @@ class RoutinesController < ApplicationController
             filtered_params = params
             filtered_params[:routine] = params[:routine].reject{|key, value| key == "image" && value.empty?}
             routine = current_user.routines.build(filtered_params[:routine])
-            routine.exercises.build(filtered_params[:exercise])
+            if exercise = Exercise.find_by(name: filtered_params[:exercise][:name])
+                routine.exercises << exercise
+            else
+                routine.exercises.build(filtered_params[:exercise])
+            end
             routine.image = nil if routine.image.empty?
             if routine.save
                 redirect '/routines' #take the use to the recipes index page
