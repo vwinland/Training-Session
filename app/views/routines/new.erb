@@ -3,8 +3,8 @@
 <form action="/routines" method="post">
     <label>Title</label>
     <input type="text" name="routine[title]">
-    <label>Method</label>
-    <textarea name="routine[method]"></textarea>
+<br>
+    <textarea rows="4" cols="50" name="routine[method]">Enter your routine here...</textarea>
     <label>Image URL</label>
     <input type="text" name="routine[image]">
     <label>Add existing exercise or create your own</label>
@@ -15,3 +15,5 @@
         <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>"><%= exercise.name%></input>
     <% end %>
 </form>
+
+
