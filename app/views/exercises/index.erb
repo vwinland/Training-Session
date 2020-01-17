@@ -1,11 +1,7 @@
 <h1>Exercises</h1>
-<% exercises.each do |exercise| %>
+<% @exercises.each do |exercise| %>
     <h2><%= exercise.name %></h2>
     <img src ="<%= exercise.image %>" alt="exercise">
     <%# if current_user == exercise.user %>
-    <! -- <a href="/exercises/<%#exercise.id %>/edit">Edit</a> -->
-    <! -- <form action="/exercises/<%= exercise.id %>" method="post"> --> 
-    <! -- <input type="hidden" nme="_method" value="delete"> -->
-    <! -- <input type="submit" value="Delete"> -->
     <%# end %>
 <% end %>
