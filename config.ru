@@ -8,4 +8,5 @@ use Rack::MethodOverride
 use SessionsController
 use UsersController
 use RoutinesController
+use ExercisesController
 run ApplicationController
