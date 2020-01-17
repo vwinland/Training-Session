@@ -16,5 +16,10 @@ class UsersController < ApplicationController
         end
     end
 
-    # users can delete account
+    # actions vthat let useres view their routines and exercises
+
+    get '/yourworkouts' do
+        @routines = current_user.routines
+        erb :'/routines/index'
+    end
 end
