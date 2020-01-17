@@ -1,5 +1,12 @@
 <h1><%= @routine.title %></h1>
 <h2><%= @routine.method %></h2>
+<h2>Exercises</h2>
+<ul>
+<% @routine.exercises.each do |exercise| %>
+    <li><%=exercise.name%></li>
+    <% end %>
+</ul>
+<h2>Method</h2>
 <img src="<%= @routine.image %>" alt="routine">
 <form action="/routines/<%= @routine.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
