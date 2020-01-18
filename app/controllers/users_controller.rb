@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     # actions vthat let useres view their routines and exercises
 
     get '/yourworkouts' do
-        @routines = current_user.routines
+        @routines = current_user.routines.reverse
         erb :'/routines/index'
     end
 end

@@ -14,7 +14,7 @@
     <button type="submit">Add Routine</button>
 <br>
     <% @exercises.each do |exercise| %>
-        <br>
+    <br>
         <input type="checkbox" name="routine[exercise_ids][]" value="<%= exercise.id %>"><%= exercise.name%></input>
     <% end %>
 </form>
