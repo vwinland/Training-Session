@@ -15,6 +15,14 @@ body {
     
     /* Text styles */
     text-align: center;
+    color: white; /* ADD THIS LINE */
+    
+    /* Background styles */
+    background-image: url('https://i.imgur.com/5tlj8S3.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .hero h1 {
@@ -38,32 +46,11 @@ body {
     margin-right: auto;
     
     /* Text styles */
-    color: black;
+    color: white; /* CHANGE THIS LINE */
     text-decoration: none;
     font-size: 1.5em;
     
     /* Border styles */
-    border: 3px solid black;
+    border: 3px solid white; /* CHANGE THIS LINE */
     border-radius: 20px;
-}
-
-.hero {
-    /* Sizing */
-    width: 100vw;
-    height: 100vh;
-    
-    /* Flexbox stuff */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    /* Text styles */
-    text-align: center;
-    
-    /* Background styles */
-    background-image: url(https://i.imgur.com/5tlj8S3.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
 }
