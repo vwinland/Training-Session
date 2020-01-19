@@ -1,23 +1,11 @@
-# TODO
-* create migrations 
-* create models with relationships
-* plan out routes for controller following RESTful conventions and map to CRUD actions
-* build controller actions and passing appropriate data to views 
-* build views (forms)
-* build navigation
-* add user authentication
-* add user authorization
+Training Session is a simple CRUD application that allows a user to create, read, update, and destroy workout routines posted on the app. Users are able to view their own posts as well as the posts of other users. Users can also add and associate exercises to their routines. 
 
-# Training-Session
 
-# Project Requirements
-* Build an MVC Sinatra application.
-* Use ActiveRecord with Sinatra.
-* Use multiple models.
-* Use at least one has_many relationship on a User model and one belongs_to relationship on another model.
-* Must have user accounts - users must be able to sign up, sign in, and sign out.
-* Validate uniqueness of user login attribute (username or email).
-* Once logged in, a user must have the ability to create, read, update and destroy the resource that belongs_to user.
-* Ensure that users can edit and delete only their own resources - not resources created by other users.
-* Validate user input so bad data cannot be persisted to the database.
-* BONUS: Display validation failures to user with error messages. (This is an optional feature, challenge yourself and give it a shot!)*
+Installation Instructions
+Fork/Clone this repo, and then navigate to the repo directory in your terminal.
+
+Then, run bundle install to install all gem dependencies.
+
+Run all rake migrations with rake db:migrate
+
+Finally, start up a server using shotgun and navigate to the provided url
