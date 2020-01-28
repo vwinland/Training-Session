@@ -1,3 +1,4 @@
+require 'pry'
 class RoutinesController < ApplicationController
 
     before do 
@@ -29,6 +30,7 @@ class RoutinesController < ApplicationController
                 redirect '/routines' #take the use to the recipes index page
             else
                 @error = "Data invalid. Please try again."
+                @exercises = Exercise.all
                erb :'/routines/new' #rerender the form
             end
         end
@@ -58,21 +60,33 @@ class RoutinesController < ApplicationController
 
         # Edit 
         # make a get request to '/routines/:id/edit'
+        
         get '/routines/:id/edit' do 
-                @routine = Routine.find(params[:id])
-                erb :'/routines/edit'
+            @routine = Routine.find(params[:id])
+                if current_user == @routine.user
+                
+                    erb :'/routines/edit'
+                else 
+                redirect '/routines'
+            end
         end
 
         # Update
         # make a patch request to '/routines/:id'
+       
         patch '/routines/:id' do 
+
             @routine = Routine.find(params[:id])
-            if !params[:routine][:title].empty? && !params[:routine][:method].empty?
+            if current_user == @routine.user
+                if !params[:routine][:title].empty? && !params[:routine][:method].empty?
                 @routine.update(params[:routine])
                 redirect "/routines/#{params[:id]}"
+                else
+                    @error = "Data invalid. Please try again."
+                    erb :'/routines/edit'
+                end
             else
-                @error = "Data invalid. Please try again."
-                erb :'/routines/edit'
+                redirect '/routines'
             end
         end 
 
@@ -80,8 +94,12 @@ class RoutinesController < ApplicationController
         
         # make a delete request to '/routines/:id'
         delete '/routines/:id' do
-            routine = Routine.find(params[:id])
-            routine.destroy
-            redirect '/routines'
+            @routine = Routine.find(params[:id])
+            if current_user == @routine.user
+                routine.destroy
+                redirect '/routines'
+            else
+                redirect '/routines'
+            end
         end
 end
